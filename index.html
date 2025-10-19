@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorry - You Can Rely On Me</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ffc0f0 0%, #e0b3ff 50%, #d9b3ff 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .container {
+            background: linear-gradient(135deg, #fff5f9 0%, #f3e6ff 100%);
+            border-radius: 20px;
+            padding: 60px 40px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(200, 100, 200, 0.3);
+            max-width: 600px;
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            color: #d946a6;
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(200, 100, 200, 0.2);
+            letter-spacing: 1px;
+        }
+
+        p {
+            color: #7c3aed;
+            font-size: 1.8em;
+            font-weight: bold;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            text-shadow: 1px 1px 3px rgba(200, 100, 200, 0.1);
+        }
+
+        .heart {
+            display: inline-block;
+            color: #ec4899;
+            font-size: 2.5em;
+            animation: pulse 1.5s ease-in-out infinite;
+            margin: 0 10px;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        .button {
+            background: linear-gradient(135deg, #ec4899 0%, #a855f7 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 10px 25px rgba(236, 72, 153, 0.3);
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(168, 85, 247, 0.4);
+        }
+
+        .button:active {
+            transform: translateY(0);
+        }
+
+        .decoration {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.15;
+            pointer-events: none;
+        }
+
+        .decoration1 {
+            width: 300px;
+            height: 300px;
+            background: #ec4899;
+            top: -100px;
+            left: -100px;
+        }
+
+        .decoration2 {
+            width: 250px;
+            height: 250px;
+            background: #a855f7;
+            bottom: -80px;
+            right: -80px;
+        }
+    </style>
+</head>
+<body>
+    <div class="decoration decoration1"></div>
+    <div class="decoration decoration2"></div>
+
+    <div class="container">
+        <h1>Sorry <span class="heart">💜</span></h1>
+        <p>You can rely on me</p>
+        <button class="button">I appreciate you</button>
+    </div>
+</body>
+</html>
