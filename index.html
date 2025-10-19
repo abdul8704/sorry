@@ -153,8 +153,8 @@
         <h1>Sorry <span class="heart">💜</span></h1>
         <p>You can rely on me</p>
         <div class="buttons">
-            <button class="button" onclick="triggerConfetti()">Okay i forgive you</button>
-            <button class="button" onclick="triggerConfetti()">Okay</button>
+            <button class="button" onclick="triggerConfetti()">I okay apologised</button>
+            <button class="button" onclick="showPlease()">No</button>
         </div>
     </div>
 
@@ -175,6 +175,10 @@
 
                 setTimeout(() => confetti.remove(), 3000);
             }
+        }
+
+        function showPlease() {
+            alert('Please 🥺💜');
         }
     </script>
 </body>
