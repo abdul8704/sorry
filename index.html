@@ -98,6 +98,29 @@
             transform: translateY(0);
         }
 
+        .buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .confetti {
+            position: fixed;
+            pointer-events: none;
+            width: 10px;
+            height: 10px;
+            background: #ec4899;
+            animation: confetti-fall 3s ease-in forwards;
+        }
+
+        @keyframes confetti-fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
         .decoration {
             position: absolute;
             border-radius: 50%;
@@ -129,7 +152,30 @@
     <div class="container">
         <h1>Sorry <span class="heart">💜</span></h1>
         <p>You can rely on me</p>
-        <button class="button">I appreciate you</button>
+        <div class="buttons">
+            <button class="button" onclick="triggerConfetti()">Okay i forgive you</button>
+            <button class="button" onclick="triggerConfetti()">Okay</button>
+        </div>
     </div>
+
+    <script>
+        const colors = ['#ec4899', '#a855f7', '#ffc0f0', '#d9b3ff', '#ff69b4', '#da70d6'];
+
+        function triggerConfetti() {
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                confetti.style.left = Math.random() * window.innerWidth + 'px';
+                confetti.style.top = '-10px';
+                confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.setProperty('--tx', (Math.random() - 0.5) * 200 + 'px');
+                confetti.style.animation = `confetti-fall ${2 + Math.random() * 1}s ease-in forwards`;
+                confetti.style.transform = `translateX(${(Math.random() - 0.5) * 200}px) rotate(${Math.random() * 360}deg)`;
+                document.body.appendChild(confetti);
+
+                setTimeout(() => confetti.remove(), 3000);
+            }
+        }
+    </script>
 </body>
 </html>
